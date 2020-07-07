@@ -18,7 +18,8 @@ var Modal = function Modal(props) {
       children = props.children,
       show = props.show,
       top = props.top,
-      customClassName = props.customClassName;
+      customClassName = props.customClassName,
+      childClickHandler = props.childClickHandler;
 
   var closeFunc = function closeFunc(e) {
     if (e.target.className.indexOf('modalContainer') > -1) props.handleClose();
@@ -31,6 +32,7 @@ var Modal = function Modal(props) {
     },
     className: "modalContainer"
   }, /*#__PURE__*/_react["default"].createElement("div", {
+    onClick: childClickHandler,
     className: "".concat(customClassName, " ").concat(autoHeight ? 'aHModalChild' : 'modalChild', " posr ").concat(top ? "t".concat(top) : 't100')
   }, children));
 };

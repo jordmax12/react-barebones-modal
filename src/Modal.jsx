@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import './Modal.css'
 
 const Modal = props => {
-  const { autoHeight, children, show, top, customClassName } = props
+  const { autoHeight, children, show, top, customClassName, childClickHandler } = props
 
   const closeFunc = e => {
     if (e.target.className.indexOf('modalContainer') > -1) props.handleClose()
   }
+
+
 
   return (
     <div
@@ -16,6 +18,7 @@ const Modal = props => {
       className='modalContainer'
     >
       <div
+        onClick={childClickHandler}
         className={`${customClassName} ${
           autoHeight ? 'aHModalChild' : 'modalChild'
           } posr ${top ? `t${top}` : 't100'}`}
