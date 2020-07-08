@@ -1,6 +1,6 @@
 {
   "name": "react-barebones-modal",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-file index.js"
   },
